@@ -10,12 +10,27 @@
     "lint:style": "stylelint \"**/*.{vue,css,scss}\"",
     "format": "prettier --write .",
     "lint:spell": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|cjs|mjs|js|jsx|ts|tsx|vue|css|scss|md)\"",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "husky"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-git"
     }
+  },
+  "lint-staged": {
+    
+    "*.{js,jsx,ts,vue}": [
+      "prettier -- cache --write",
+      "eslint --fix"
+    ],
+    "*.{css,scss,vue}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{html,md}": [
+      "prettier --cache --write --no-error-on-unmatched-pattern"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -38,6 +53,8 @@
     "cz-git": "1.12.0",
     "commitizen": "^4.3.0",
     "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.4.1"
+    "@commitlint/config-conventional": "^20.4.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
   }
 }
