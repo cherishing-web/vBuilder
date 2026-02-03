@@ -9,8 +9,13 @@
     "lint:vue": "eslint .",
     "lint:style": "stylelint \"**/*.{vue,css,scss}\"",
     "format": "prettier --write .",
-    "lint:spell": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|cjs|mjs|js|jsx|ts|tsx|vue|css|scss|md)\"" 
-
+    "lint:spell": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|cjs|mjs|js|jsx|ts|tsx|vue|css|scss|md)\"",
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
   },
   "keywords": [],
   "author": "",
